@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nebo Café</title>
+    <meta
+      name="description"
+      content="Premium coffee shop experience crafted for modern coffee lovers."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a href="#home" class="brand">
+          <img src="images/logo.png" alt="Nebo Café logo" />
+          <span>
+            <strong>Nebo Café</strong>
+            <small>Specialty coffee</small>
+          </span>
+        </a>
+
+        <button class="menu-toggle" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav class="nav-links">
+          <a href="#home" class="active">Home</a>
+          <a href="#about">About</a>
+          <a href="#menu">Menu</a>
+          <a href="#build">Build Your Drink</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#offers">Offers</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#reservation">Reservation</a>
+          <a href="#contacts">Contacts</a>
+        </nav>
+
+        <button
+          id="themeToggle"
+          class="theme-toggle"
+          aria-label="Toggle dark mode"
+        >
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </header>
+
+      <main>
+        <section id="home" class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">Crafted with calm, served with warmth</p>
+            <h1>Elevated coffee rituals in a modern sanctuary.</h1>
+            <p>
+              Discover rare beans, signature pours, and an intimate atmosphere
+              designed for slow sips and warm conversations.
+            </p>
+            <div class="hero-actions">
+              <a href="#menu" class="btn btn-dark">View Menu</a>
+              <a href="#reservation" class="btn btn-light">Reserve a Table</a>
+            </div>
+          </div>
+
+          <div class="hero-image">
+            <img
+              src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80"
+              alt="Artisan coffee cup"
+            />
+          </div>
+        </section>
+
+        <section id="menu" class="menu-section">
+          <div class="section-heading">
+            <p class="eyebrow">Our Menu</p>
+            <h2>Explore our delicious offerings</h2>
+            <p class="subtitle">
+              A thoughtful selection of crafted beverages and pastries.
+            </p>
+          </div>
+
+          <div class="filter-row" role="tablist" aria-label="Menu categories">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="Coffee">Coffee</button>
+            <button class="filter-btn" data-category="Food">Food</button>
+            <button class="filter-btn" data-category="Desserts">
+              Desserts
+            </button>
+          </div>
+
+          <div id="productGrid" class="product-grid"></div>
+        </section>
+      </main>
+    </div>
+
+    <button id="cartToggle" class="cart-fab" aria-label="Open cart">
+      <i class="fa-solid fa-basket-shopping"></i>
+    </button>
+
+    <div id="cartOverlay" class="cart-overlay"></div>
+    <aside id="cartSidebar" class="cart-sidebar" aria-label="Shopping cart">
+      <div class="cart-header">
+        <h3>Your Cart</h3>
+        <button id="closeCart" class="icon-btn" aria-label="Close cart">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-summary">
+        <div><span>Subtotal</span><strong id="subtotal">$0.00</strong></div>
+        <div><span>Tax</span><strong id="tax">$0.00</strong></div>
+        <div class="grand-total">
+          <span>Total</span><strong id="total">$0.00</strong>
+        </div>
+      </div>
+    </aside>
+
+    <div id="productModal" class="modal" aria-hidden="true">
+      <div class="modal-backdrop"></div>
+      <div
+        class="modal-card"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+      >
+        <button class="modal-close" aria-label="Close product details">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div id="modalContent"></div>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
